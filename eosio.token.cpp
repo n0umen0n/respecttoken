@@ -80,8 +80,8 @@ void token::transfer( const name&    from,
                       const string&  memo )
 {
     check( from != to, "cannot transfer to self" );
-    //require_auth( from );
-    require_auth_either("thedaothedao"_n, from);
+    require_auth( from );
+    //require_auth_either("thedaothedao"_n, from);
     check( is_account( to ), "to account does not exist");
     auto sym = quantity.symbol.code();
     stats statstable( get_self(), sym.raw() );
@@ -156,7 +156,7 @@ void token::close( const name& owner, const symbol& symbol )
    check( it->balance.amount == 0, "Cannot close because the balance is not zero." );
    acnts.erase( it );
 }
-
+/*
 void token::require_auth_either(name user1, name user2) 
 {
   if (has_auth(user1)) 
@@ -172,7 +172,7 @@ void token::require_auth_either(name user1, name user2)
       check(false, "Missing required authority");
   }
 }
-
+*/
 
 
 

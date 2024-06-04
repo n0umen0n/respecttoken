@@ -142,7 +142,7 @@ namespace eosio {
 
          void sub_balance( const name& owner, const asset& value );
          void add_balance( const name& owner, const asset& value, const name& ram_payer );
-         void require_auth_either(name user1, name user2);
+         //void require_auth_either(name user1, name user2);
 
    };
 
